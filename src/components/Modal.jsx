@@ -5,15 +5,16 @@ const Modal = ({ setModalVisible, userId }) => {
   const Chats = useContext(UserContext);
   const modalRef = useRef(null);
 
-  const handleRead = (userId) => {
+  const handleMarkUnread = (userId) => {
     const updatedData = Chats.chatData.map((chat) => {
       if (chat.userId === userId) {
-        return { ...chat, unreadCount: 0 };
+        const newUnreadCount = chat.unreadCount + 1; // Increment the unreadCount
+        return { ...chat, unreadCount: newUnreadCount };
       }
       return chat;
     });
     Chats.setChatData(updatedData);
-    setModalVisible(false); // Ensure modal closes after marking as read
+    setModalVisible(false); // Ensure modal closes after action
   };
 
   const handleDelete = (userID) => {
@@ -52,10 +53,10 @@ const Modal = ({ setModalVisible, userId }) => {
           className="p-2 hover:bg-gray-100 cursor-pointer"
           onClick={(e) => {
             e.stopPropagation();
-            handleRead(userId);
+            handleMarkUnread(userId);
           }}
         >
-          Mark as read
+          Mark as unread
         </li>
         <li
           className="p-2 hover:bg-gray-100 cursor-pointer"
