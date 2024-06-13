@@ -6,14 +6,19 @@ const Modal = ({ setModalVisible, userId }) => {
   const modalRef = useRef(null);
 
   const handleMarkUnread = (userId) => {
-    const updatedData = Chats.chatData.map((chat) => {
+    // Find the unreadCount from the result array
+    const userInResult = Chats.result.find((user) => user.userId === userId);
+    const newUnreadCount = userInResult ? userInResult.unreadCount : 0;
+
+    // Update chatData with the new unreadCount
+    const updatedChatData = Chats.chatData.map((chat) => {
       if (chat.userId === userId) {
-        const newUnreadCount = chat.unreadCount + 1; // Increment the unreadCount
         return { ...chat, unreadCount: newUnreadCount };
       }
       return chat;
     });
-    Chats.setChatData(updatedData);
+
+    Chats.setChatData(updatedChatData);
     setModalVisible(false); // Ensure modal closes after action
   };
 

@@ -8,10 +8,10 @@ const App = () => {
   
   return (
     <div>
-    <div className='md:flex md:border border-white md:mx-24 md:my-10 md:shadow-2xl md:rounded-xl p-2'>
+    <div className=' sm:flex md:flex md:border border-white md:mx-24 md:my-10 md:shadow-2xl md:rounded-xl p-2'>
       <Sidebar/>
       {User.showChat && (
-      <div className='md:w-full'>
+      <div className='md:w-full sm:w-full'>
       <ChatContainer/>
       </div>)}
     </div>
