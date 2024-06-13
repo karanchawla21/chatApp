@@ -52,7 +52,7 @@ const UserCard = ({ info }) => {
   return (
     <div
       onClick={handleSelect}
-      className={`relative flex p-[8px] w-full md:w-[330px] h-[64px] m-5 gap-5 hover:bg-blue-50 rounded-lg cursor-pointer ${
+      className={`relative flex p-[8px] w-full md:w-[280px] lg:w-[330px] h-[64px] lg:m-5 md:mt-5 md:ml-2 gap-5 hover:bg-blue-50 rounded-lg cursor-pointer ${
         isActive ? "bg-blue-100" : ""
       }`}
     >

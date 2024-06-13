@@ -4,7 +4,7 @@ import { createContext, useState } from "react";
 export const UserContext = createContext(null);
 
 export const UserProvider = ({ children }) => {
-    const [showChat, setShowChat] = useState("user1");
+    const [showChat, setShowChat] = useState(null);
     const [chatData, setChatData] = useState(data);
 
     // Extract userId and unreadCount

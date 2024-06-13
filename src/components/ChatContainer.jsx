@@ -6,6 +6,7 @@ import {
   PHONE,
   THREE_DOTS,
   VIDEO_CAM,
+  SEND,
 } from "../constants/constants";
 
 const ChatContainer = () => {
@@ -23,7 +24,7 @@ const ChatContainer = () => {
   const placeHolder = `Message ${activeUser.name}`;
 
   return (
-    <div className="flex flex-col gap-10 md:gap-0 p-4 h-full overflow-y-auto relative w-full md:border-l-4 border-gray-200 relative">
+    <div className={`flex flex-col ${User.showChat && ' md:block'}  gap-10 md:gap-0 lg:gap-0 p-4 h-full overflow-y-auto w-full md:border-l-4 border-gray-200 relative`}>
       <button
         className="md:hidden absolute top-2 left-2 font-extrabold text-2xl"
         onClick={() => User.setShowChat(null)}
@@ -81,16 +82,19 @@ const ChatContainer = () => {
         );
       })}
 
-      <div className="flex mt-32 md:absolute md:bottom-1 md:ml-10">
+      <div className="flex lg:mt-32 md:absolute md:bottom-1 md:ml-10">
         {PLUS}
         {MIKE}
 
         <div>
           <input
-            className="w-[300px] md:w-[700px] ml-2 border border-gray-200 rounded-xl p-2 "
+            className="w-[300px] md:w-[320px] lg:w-[700px] ml-2 border border-gray-200 rounded-xl p-2 "
             type="text"
             placeholder={placeHolder}
           />
+          <span className="absolute lg:right-4 lg:bottom-3 bottom-7 right-6 md:bottom-3 md:right-4">
+            {SEND}
+          </span>
         </div>
       </div>
     </div>
