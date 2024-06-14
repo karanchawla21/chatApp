@@ -63,7 +63,7 @@ const UserCard = ({ info }) => {
       />
       <div className="flex-1">
         <h1 className="font-bold">{info.name}</h1>
-        <div className="flex gap-3">
+        <div className="flex gap-x-3">
           <p>{restrictedMessageContent}</p>
           {info.unreadCount > 0 && <div className="rounded-full w-5 h-5 flex justify-center align-middle bg-green-600 text-white">{info.unreadCount}</div>}
         </div>

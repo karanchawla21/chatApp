@@ -24,7 +24,7 @@ const ChatContainer = () => {
   const placeHolder = `Message ${activeUser.name}`;
 
   return (
-    <div className={`flex flex-col ${User.showChat && ' md:block'}  gap-10 md:gap-0 lg:gap-0 p-4 h-full overflow-y-auto w-full md:border-l-4 border-gray-200 relative`}>
+    <div className={`flex flex-col ${User.showChat && ' md:block'}  gap-10 md:gap-0 lg:gap-0 p-4 h-full overflow-y-auto w-full  relative`}>
       <button
         className="md:hidden absolute top-2 left-2 font-extrabold text-2xl"
         onClick={() => User.setShowChat(null)}
